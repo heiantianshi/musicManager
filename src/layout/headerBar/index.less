@@ -1,0 +1,61 @@
+.headerBox{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 0.2s;
+    .wapperBox{
+        width: 50px;
+        height: 100%;
+        text-align: center;
+        &:hover{
+            background-color: #fafafa;
+        }
+    }
+    .AvatarBox{
+        height: 100%;
+        text-align: center;
+        position: relative;
+        &:hover{
+            background-color: #fafafa;
+            .PopoverBox{
+                display: block;
+            }
+        }
+        .PopoverBox{
+            z-index: 999;
+            display: none;
+            position: absolute;
+            top: 5px;
+            right: 0;
+            min-width: 160px;
+            text-align: left;
+            // box-shadow: 0px 2px 5px #ccc;
+            .whiteSpace{
+                height: 8px;
+            }
+            .popoverCon{
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 4px 0;
+                .p{
+                    display: block;
+                    margin: 5px 0;
+                    padding: 2px;
+                    padding-left: 20px;
+                    height: 36px;
+                    line-height: 36px;
+                    cursor: pointer;
+                    span{
+                        margin-left: 10px;
+                    }
+                    &:hover{
+                        background-color: #75aff9;
+                    }
+                }
+            }
+        }
+    }
+}
+

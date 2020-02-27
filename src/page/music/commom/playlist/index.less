@@ -1,0 +1,141 @@
+.playList{
+    width: 100%;
+    padding: 10px 0 10px 10px;
+    .playListNav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.listContainer{
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    flex-direction: row;
+    .listLeft{
+        width: 10%;
+        min-width: 100px;
+        color: #ccc;
+    }
+    .listRight{
+        max-width: 500px;
+        width: 90%;
+        .everyName{
+            display: inline-block;
+            height: 40px;
+            position: relative;
+            .name{
+                border-radius: 5px;
+                padding:0 14px 0 6px;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                cursor: pointer;
+                &:hover{
+                    color: #b54e41;
+                }
+                .hot{
+                    position: absolute;
+                    color: #b54e41;
+                    font-size: 2px;
+                }
+            }
+            .line{
+                margin: 0 8px 0 10px;
+                color: #d8d8d8;
+            }
+        }
+    }
+}
+
+.everyName{
+    display: inline-block;
+    position: relative;
+    .name1{
+        border-radius: 10px;
+        padding:2px 14px 2px 14px;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        cursor: pointer;
+        &:hover{
+            color: #b54e41;
+        }
+    }
+    .line{
+        margin: 0 8px 0 8px;
+        color: #d8d8d8;
+    }
+}
+.playSonglist{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 70px;
+    .containerBox{
+            width: 170px;
+            margin-bottom: 10px;
+            display: inline-block;
+        p{
+            padding: 0 5px;
+        }
+        .everyBox{
+            width: 170px;
+            height: 170px;
+            border-radius: 10px;
+            display: inline-block;
+            background-size:170px 170px;
+            background-repeat:no-repeat;
+            position: relative;
+            cursor: pointer;
+            &:hover{
+                .playBtn{
+                    display: inline-block;
+                }
+            }
+            .playCount{
+                color: #fff;
+                position: absolute;
+                font-size: 12px;
+                top: 6px;
+                right: 5px;
+            }
+            .userNickName{
+                width: 110px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: #fff;
+                position: absolute;
+                font-size: 12px;
+                bottom: 6px;
+                left: 5px;
+                text-shadow:0px 0px 1px rgb(207, 207, 207);
+            }
+            .playBtn{
+                display: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: rgba(199, 199, 199, 0.9);
+                position: absolute;
+                bottom :10px;
+                right: 10px;
+                span{
+                    position: absolute;
+                    bottom :10px;
+                    right: -5px;
+                    display: inline-block;
+                    width:0;
+                    height:0;
+                    border-top:10px solid transparent;
+                    border-bottom:10px solid transparent;
+                    border-left:15px solid #b54e41;
+                    border-right:15px solid transparent;
+                }
+            }
+        }
+    }
+}
