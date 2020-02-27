@@ -139,7 +139,7 @@ class Playlist extends React.Component<any, any> {
     private changeSongList = () => {
         const {playList}=this.state;
         const spaceNumber=!(_.isEmpty(playList))&&this.getEverySpace()
-        const List=JSON.parse(JSON.stringify(playList))
+        const List=playList&&JSON.parse(JSON.stringify(playList))
         for (let index = 0; index < spaceNumber; index++) {
             List.playlists.push({name:'hidden',playCount:1,creator:{nickname:'1'}})
         }

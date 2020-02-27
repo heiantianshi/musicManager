@@ -30,7 +30,7 @@ class MvList extends Component<IProps, any> {
                 limit: 28
             }
         }).then(res => {
-            this.setState({ mvList: res.data })
+            res&&this.setState({ mvList: res.data })
         })
     }
     // 获取播放mv地址

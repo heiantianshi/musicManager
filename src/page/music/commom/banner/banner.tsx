@@ -23,25 +23,27 @@ class Banner extends React.Component<IBanner, any> {
                 'https://zos.alipayobjects.com/rmsportal/hzPBTkqtFpLlWCi.jpg',
                 'https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg',
             ],
-            banner:[]
+            banner: []
         };
     }
     componentDidMount() {
-      http.get(MusicApi.getBanner, {}).then((res:any) => {
-        const imgArray:any[]=[];
-        res.banners.map(item=>{
-          imgArray.push(item.imageUrl)
+        http.get(MusicApi.getBanner, {}).then((res: any) => {
+            const imgArray: any[] = [];
+            if (res && res.banners) {
+                res.banners.map(item => {
+                    imgArray.push(item.imageUrl)
+                })
+                this.setState({
+                    imgArray: imgArray,
+                    banner: res.banners,
+                })
+            }
         })
-        this.setState({ 
-          imgArray: imgArray,
-          banner: res.banners,
-         })
-      })
     }
-    componentWillUnmount(){
+    componentWillUnmount() {
         this.setState = (state, callback) => {
             return
-        }    
+        }
     }
     public onChange = (type: any, int: any) => {
         if (type === 'before') {
@@ -100,7 +102,7 @@ class Banner extends React.Component<IBanner, any> {
         });
     }
     render() {
-        const { imgArray,prevEnter,nextEnter,thumbEnter } = this.state;
+        const { imgArray, prevEnter, nextEnter, thumbEnter } = this.state;
         const intArray = this.getNextPrevNumber();
         const thumbChildren = imgArray.map((img: any, i: any) =>
             <span key={i}><i style={{ backgroundImage: `url(${img})` }} /></span>
@@ -116,7 +118,7 @@ class Banner extends React.Component<IBanner, any> {
                     autoPlay
                 >
                     {
-                        imgArray.map((item:any, index:any) => {
+                        imgArray.map((item: any, index: any) => {
                             return (
                                 <Element key={index}
                                     prefixCls="banner-user-elem"
@@ -137,7 +139,7 @@ class Banner extends React.Component<IBanner, any> {
                     <Arrow arrowType="prev" key="prev" prefixCls="user-arrow" component={TweenOne}
                         onMouseEnter={this.prevEnter}
                         onMouseLeave={this.prevLeave}
-                        // animation={{ left: prevEnter ? 0 : -120 }}
+                    // animation={{ left: prevEnter ? 0 : -120 }}
                     >
                         <div className="arrow"></div>
                         <TweenOneGroup
@@ -152,7 +154,7 @@ class Banner extends React.Component<IBanner, any> {
                     <Arrow arrowType="next" key="next" prefixCls="user-arrow" component={TweenOne}
                         onMouseEnter={this.nextEnter}
                         onMouseLeave={this.nextLeave}
-                        // animation={{ right: nextEnter ? 0 : -120 }}
+                    // animation={{ right: nextEnter ? 0 : -120 }}
                     >
                         <div className="arrow"></div>
                         <TweenOneGroup
@@ -166,7 +168,7 @@ class Banner extends React.Component<IBanner, any> {
                         </TweenOneGroup>
                     </Arrow>
                     <Thumb prefixCls="user-thumb" key="thumb" component={TweenOne}
-                        // animation={{ bottom: thumbEnter ? 0 : -70 }}
+                    // animation={{ bottom: thumbEnter ? 0 : -70 }}
                     >
                         {thumbChildren}
                     </Thumb>
