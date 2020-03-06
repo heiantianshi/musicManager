@@ -9,6 +9,7 @@ import basic from './basicDetails';
 import table from './table';
 import form from './form';
 import charts from './charts';
+import chat from './chat';
 
 const routeMap: any[] = [
     music,
@@ -16,7 +17,8 @@ const routeMap: any[] = [
     basic,
     table,
     form,
-    charts
+    charts,
+    chat
 ];
 let breadcrumbNameMap = {};
 routeMap.map(item=>(
@@ -57,7 +59,6 @@ const Home = withRouter(props => {
         }
 
     }
-    console.log(user)
     return (
         <div className="pageContent">
             <div className="Breadcrumb">

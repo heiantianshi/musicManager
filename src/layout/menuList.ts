@@ -87,6 +87,19 @@ const MenuList = [
             }
         ]
     },
+    {
+        name: '聊天室',
+        icon: 'wechat',
+        path: 'chat',
+        hideInMenu: false,
+        children: [
+            {
+                name: '聊天主页',
+                path: 'chat/login',
+                hideInMenu: false
+            }
+        ]
+    },
 ]
 
 export default MenuList

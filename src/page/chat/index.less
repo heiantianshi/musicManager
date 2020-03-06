@@ -1,0 +1,130 @@
+.chat{
+    // background-color: pink;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    &>div{
+        width: 49%;
+    }
+    .chatWindow{
+        width: 100%;
+        height: 600px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        display: flex;
+        .left{
+            width: 70%;
+            height: 100%;
+            border-right: 2px solid #ccc;
+            .userMsg{
+                width: 100%;
+                height: 50px;
+                padding-left: 20px;
+                line-height: 50px;
+                border-bottom: 2px solid #ccc;
+            }
+            .chatPanel{
+                width: 100%;
+                height: 350px;  
+                border-bottom: 2px solid #ccc;
+                overflow-y:scroll;
+                padding: 20px 10px ;
+                .textLeft{
+                    display: flex;
+                    margin-bottom: 10px;
+                    .Avatar{
+                        width: 8%;
+                    }
+                    .text{
+                        min-width: 7%;
+                        max-width: 60%;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        position: relative;
+                        padding: 4px 10px;
+                        word-wrap:break-word;
+                        .triangle{
+                            position: absolute;
+                            left: -10px;
+                            top: 10px;
+                            width: 0; 
+                            height: 0;
+                            border-width: 5px;
+                            border-style: solid;
+                            border-color:transparent #fff transparent transparent;
+                        }
+                    }
+                }
+                .textRight{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 10px;
+                    .Avatar{
+                        width: 8%;
+                        text-align: right;
+                    }
+                    .text{
+                        min-width: 7%;
+                        max-width: 60%;
+                        background-color: #a9da69;
+                        border-radius: 5px;
+                        position: relative;
+                        padding: 4px 10px;
+                        word-wrap:break-word;
+                        .triangle{
+                            position: absolute;
+                            right:-10px;
+                            top: 10px;
+                            width: 0; 
+                            height: 0;
+                            border-width: 5px;
+                            border-style: solid;
+                            border-color:transparent transparent transparent #a9da69;
+                        }
+                    }
+                }
+            }
+            .inputWindow{
+                .toolbar{
+                    width: 100%;
+                    height: 30px;
+                    padding: 0 20px;
+                    padding-top: 4px;
+                    font-size: 18px;
+                }
+                .textPanel{
+                    width: 100%;
+                    height: 126px;
+                    .textArea{
+                        background-color: transparent;
+                        height: 100%;
+                        border: none;
+                        resize: none;
+                        &:focus{
+                            outline: none;
+                            box-shadow:none;
+                            -webkit-box-shadow:none;
+                        }
+                    }
+                }
+                .buttonGroup{
+                    width: 100%;
+                    height: 40px;
+                    text-align: right;
+                    line-height: 40px;
+                }
+            }
+        }
+        .right{
+            width: 30%;
+            height: 100%;
+        }
+    }
+}
+.img{
+    width: 50px;
+    height: 50%;
+    border: 1px sole #ccc;
+    margin: 10px;
+    cursor: pointer;
+}

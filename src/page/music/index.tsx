@@ -23,7 +23,7 @@ class Music extends React.Component<IMusic, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            isLock: false,
+            isLock: true,
             showSearch: false,
             searchVal: ''
         }
